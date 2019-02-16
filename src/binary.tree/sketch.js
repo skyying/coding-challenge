@@ -1,16 +1,33 @@
 import Tree from "./tree.js";
 export const sketch = p => {
   let tree;
+  p.registerEvent = () => {
+    let button = document.querySelector(".input-area > button");
+    button.addEventListener("click", p.drawTree);
+  };
   p.setup = () => {
+    p.drawTree();
+  };
+  p.drawTree = () => {
     p.createCanvas(window.innerWidth, window.innerHeight);
     p.background("#7f5bf8");
+    p.registerEvent();
     tree = new Tree();
-    [5, 1, 9, 2, 3, 1, 0, 4, 0, 3].forEach(val => {
+    let treeValue = document.querySelector(".input-area > input").value;
+    treeValue = treeValue
+      .split(" ")
+      .join("")
+      .split(",")
+      .map(x => parseInt(x)).filter( x => x === x);
+    if (!treeValue[0]) {
+      alert("Please insert a valid string like below \n 3, 2, 5");
+      return;
+    }
+    treeValue.forEach(val => {
       tree.addValue(val);
     });
     tree.traverse(p.drawNode);
   };
-  p.draw = () => {};
   p.drawNode = (c, parent) => {
     p.fill("#b4f9b6");
     p.stroke("#b4f9b6");

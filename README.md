@@ -1,7 +1,7 @@
 
 # My Coding Challenge 
 
-This is my weekly coding challenge from [The Coding Train]( https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw)'s  tutorials with `p5.js`
+This is my weekly coding challenge from [The Coding Train]( https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw)'s  tutorials with `p5.js`
 
 
 
